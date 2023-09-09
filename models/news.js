@@ -1,21 +1,24 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const CategoriesSchema = new Schema({
-    name: {
+const NewsSchema = new Schema({
+    title: {
         type: String,
         required: true,
     },
-    link: {
+    content: {
         type: String,
         required: true,
+    },
+    datePost: {
+        type: Date,
+        default: Date.now()
     },
     imgUrl: String,
     user_hidden: {
         type: Boolean,
         default: false,
     },
-    description: String,
 })
 
-module.exports = mongoose.model('categories', CategoriesSchema)
+module.exports = mongoose.model('news', NewsSchema)

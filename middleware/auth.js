@@ -31,7 +31,7 @@ const verifyTokenAdmin = (req, res, next) => {
             .json({ success: false, message: 'Access token not found' })
     try {
         const decode = decodeToken(token)
-
+        if(!decode.info.isAdmin) return res.status(400).json({success: false, message: 'Do not have permission'})
         req.info = decode.info
         next()
     } catch (error) {

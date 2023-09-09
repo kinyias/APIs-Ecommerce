@@ -12,7 +12,7 @@ const generateJWTToken = (user) => {
                 },
             },
             process.env.SECRET_KEY_JWT,
-            { expiresIn: '30s' }
+            { expiresIn: '300s' }
         ),
         refreshToken: jwt.sign(
             {
