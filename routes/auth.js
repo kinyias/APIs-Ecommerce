@@ -15,7 +15,7 @@ module.exports = function (router) {
      * POST /api/v1/refreshToken
      * @desc Get refeshToken JWT
      */
-    router.post('/v1/refreshToken', authController.refreshToken)
+    router.get('/v1/refreshToken', authController.refreshToken)
     /**
      * GET /api/v1/logout
      * @desc Logout user

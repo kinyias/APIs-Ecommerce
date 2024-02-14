@@ -13,5 +13,5 @@ module.exports = function (router) {
     // router.get('v1/user/',(req,res)=>{
     //   res.send('heelo')
     // })
-    router.get('/v1/user/:id', verifyTokenUser, userController.getUserById)
+    // router.get('/v1/user/:id', verifyTokenUser, userController.getUserById)
 }

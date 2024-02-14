@@ -62,7 +62,6 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
     const { email, password } = req.body
-
     //validation
     if (!email || !password)
         return res
@@ -94,6 +93,8 @@ const login = async (req, res) => {
         res.cookie('JWT', token.refreshToken, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 10, // 1d
+            secure: true,
+            sameSite: 'None',
         })
 
         res.status(200).json({

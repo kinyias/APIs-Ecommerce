@@ -6,7 +6,13 @@ const server = express()
 const PORT = process.env.PORT || 5000
 
 server.use(express.json())
-server.use(cors())
+// server.use(cors())
+const corsOptions = {
+    origin: 'http://127.0.0.1:5500',
+    credentials: true, // Allow credentials
+}
+
+server.use(cors(corsOptions))
 server.use(cookieParser())
 
 server.get('/', (req, res) => {
